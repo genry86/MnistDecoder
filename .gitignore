@@ -14,6 +14,10 @@ __pycache__/
 .idea/
 
 # Data
-dataset/train
-dataset/val
-data/
+dataset/train/*
+dataset/val/*
+data/*
+ 
+!data/.gitkeep
+
+*.mlpackage
