@@ -17,7 +17,7 @@ __pycache__/
 dataset/train/*
 dataset/val/*
 data/*
- 
+
 !data/.gitkeep
 
 *.mlpackage

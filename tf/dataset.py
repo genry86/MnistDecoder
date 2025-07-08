@@ -63,12 +63,18 @@ def get_dataset(image_dir, batch_size=128, img_size=(28, 28)):
 if __name__ == '__main__':
     root_dir = '../dataset/train'
     batch_size = 128
-    epochs = 10
     img_size = (28, 28)
 
     train_ds, val_ds = get_dataset(root_dir, img_size=img_size, batch_size=batch_size)
     print(len(train_ds), len(val_ds))
 
+    for i, (images, labels) in enumerate(train_ds.take(5)):
+        print(f"[{i}] Images shape: {images.shape}, Labels shape: {labels.shape}")
+        # [0] Images shape: (128, 28, 28, 1), Labels shape: (128, 10)
+        # [1] Images shape: (128, 28, 28, 1), Labels shape: (128, 10)
+        # [2] Images shape: (128, 28, 28, 1), Labels shape: (128, 10)
+        # [3] Images shape: (128, 28, 28, 1), Labels shape: (128, 10)
+        # [4] Images shape: (128, 28, 28, 1), Labels shape: (128, 10)
 
 # class MNISTSequence(Sequence):
 #     def __init__(self, root_dir, batch_size=64, img_size=(28, 28), shuffle=True):
